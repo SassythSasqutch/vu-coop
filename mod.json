@@ -1,13 +1,12 @@
 {
-	"Name": "SP and Co-op Terrains",
-	"Description": "Allows singleplayer and co-op terrains to be played in multiplayer.",
-	"Version": "1.1",
-	"Authors": "SassythSasqutch",
+	"Name": "Co-op in Multiplayer",
+	"Description": "Makes co-op maps (mostly) playable in multiplayer, with AI using Joe91's fun-bots framework.",
+	"Version": "0.1",
+	"Authors": ["SassythSasqutch"],
 	"HasVeniceEXT": true,
 	"HasWebUI": false,
 	"Dependencies": {
 	},
 	"Tags": [
-        "spterrains"
 	]
 }
