@@ -8,8 +8,8 @@ Events:Subscribe('Level:LoadResources', function()
         return
     end
 
-    -- Don't continue if the level is not any singleplayer or coop level.
-    if (string.find(levelName, 'COOP_') == nil and string.find(levelName, 'SP_') == nil) then
+    -- Don't continue if the level is not any coop level.
+    if string.find(levelName, 'COOP_') == nil then
         return
     end
 

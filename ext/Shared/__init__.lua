@@ -13,21 +13,6 @@ require '__shared/SpMapModifications/_SpMapModificationManager'
 require '__shared/MpPresets/MpCommonDataLoad'
 require '__shared/MpPresets/AddVoiceOverLogic'
 
-require '__shared/MpPresets/Default/MpDataLoad'
-require '__shared/MpPresets/Default/CreateGameModeSubWorldRef'
-require '__shared/MpPresets/Default/MapModifications/_MapModificationManager' -- I'm offloading all the code to start the map modification scripts to its own file. This way, I can guarantee they only run when a SP/COOP map is loaded in TDM CQ. You can see how this works in MapModificationsManager.lua itself.
-
-require '__shared/MpPresets/ThunderRun_CQL/MpDataLoad'
-require '__shared/MpPresets/ThunderRun_CQL/CreateGameModeSubWorldRef'
-require '__shared/MpPresets/ThunderRun_CQL/MapModifications/_MapModificationManager'
-
--- Print every bundle that is loaded.
---[[Hooks:Install('ResourceManager:LoadBundles', 500, function(hook, bundles, compartment)
-
-    for _, bundle in pairs(bundles) do
-
-        print(bundle)
-        
-    end
-
-end)]]
+require '__shared/MpPresets/HitAndRun_Rush/MpDataLoad'
+require '__shared/MpPresets/HitAndRun_Rush/CreateGameModeSubWorldRef'
+require '__shared/MpPresets/HitAndRun_Rush/MapModifications/_MapModificationManager' -- I'm offloading all the code to start the map modification scripts to its own file. This way, I can guarantee they only run when a SP/COOP map is loaded in TDM CQ. You can see how this works in MapModificationsManager.lua itself.

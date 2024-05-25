@@ -17,8 +17,7 @@ Events:Subscribe('Partition:Loaded', function(partition)
     -- Do not continue if the partition is non-existent.
     if partition == nil then return end
 
-    -- Do not continue if the partition is not from Ziba Tower (remember, we're modifying Ziba Tower data here, not data from our SP or COOP level).
-    if string.find(partition.name, 'xp2_skybar') == nil then return end
+    if string.find(partition.name, 'mp_011') == nil then return end
 
     -- Check every instance of this partition.
     for _, instance in pairs(partition.instances) do

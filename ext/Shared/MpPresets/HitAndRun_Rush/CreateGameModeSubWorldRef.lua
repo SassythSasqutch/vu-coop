@@ -21,25 +21,18 @@ Events:Subscribe('Partition:Loaded', function(partition)
 
     -- Don't continue if the level is not any singleplayer or coop level in TDM CQ.
     -- Again, change this to have the exact same code as on line 45 of MpDataLoad.lua, so that this code only runs when we're loading the map and gamemodes we want.
-    if (string.find(levelName, 'COOP_') == nil and string.find(levelName, 'SP_') == nil) or gameModeName ~= 'TeamDeathMatchC0' then
+    if string.find(levelName, 'COOP_002') == nil or gameModeName ~= 'RushLarge0' then
         return
     end
 
-    -- Again, Ziba Tower is funny, so it puts all its gamemodes under the 'Deathmatch' SubWorld, so that's all we need to point our SP/COOP level towards.
+    -- Rush --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    -- Deathmatch --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-    local zibaDeathmatchSubWorldReferenceObjectData = SubWorldReferenceObjectData(ResourceManager:FindInstanceByGuid(Guid('2DF41167-0BAB-11E1-AA4E-EFBA5D767A10'), Guid('E031587A-9C68-4A85-A05E-204F6C8122DA')))
-    -- We are just copying what Ziba Tower uses to point itself towards the 'Deathmatch' SubWorld, so you can find this in the LevelData of the MP map you're using.
-    -- I found this one by going to http://webx.powback.com/#/Levels/XP2_Skybar/XP2_Skybar.json.
-    -- I found and opened the 'Objects' dropdown near the bottom, and found the SubWorldReferenceObjectData I wanted. That's the one with the BundleName 'Levels/XP2_Skybar/DeathMatch' when I expanded it.
-    -- I copied the partition and instance GUIDs and pasted them above, as you can see.
-    -- Of course, you will need to find your own. You can use the exact same method.
+    local seineRushSubWorldReferenceObjectData = SubWorldReferenceObjectData(ResourceManager:FindInstanceByGuid(Guid('28C6D036-DC2A-11DF-BF53-8B1F263C3963'), Guid('EB7DE42F-1337-4CB2-9CCA-90A6036E667B')))
 
     -- Add to LevelData 'Objects' array
     local spLevelData = LevelData(partition.primaryInstance)
     spLevelData:MakeWritable()
-    spLevelData.objects:add(zibaDeathmatchSubWorldReferenceObjectData)
+    spLevelData.objects:add(seineRushSubWorldReferenceObjectData)
 
 end)
 
