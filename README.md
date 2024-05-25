@@ -1,4 +1,4 @@
-** WORK IN PROGRESS **
+**WORK IN PROGRESS**
 # vu-coop
 Makes co-op maps (mostly) playable in multiplayer, with AI using Joe91's fun-bots framework.
 
